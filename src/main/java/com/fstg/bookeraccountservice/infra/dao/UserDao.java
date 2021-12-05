@@ -10,7 +10,7 @@ import com.fstg.bookeraccountservice.infra.entity.User;
 public interface UserDao  extends JpaRepository<User, Long>{
 	   User findByUsername(String username);
        int deleteByUsername(String username);
-
+       boolean existsByRef(String ref);
        User findByEmail(String email);
 
 }

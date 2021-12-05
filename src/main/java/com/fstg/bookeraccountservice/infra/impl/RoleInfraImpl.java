@@ -1,25 +1,22 @@
 package com.fstg.bookeraccountservice.infra.impl;
 
-import java.util.ArrayList;
-import java.util.List;
-
+import com.fstg.bookeraccountservice.infra.dao.RoleDao;
+import com.fstg.bookeraccountservice.infra.entity.Role;
+import com.fstg.bookeraccountservice.infra.facade.RoleInfra;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.fstg.bookeraccountservice.infra.dao.RoleDao;
-import com.fstg.bookeraccountservice.infra.entity.Role;
-import com.fstg.bookeraccountservice.infra.facade.RoleInfra;
-
-
+import java.util.ArrayList;
+import java.util.List;
 
 
 @Service
-public class RoleInfraImpl  implements RoleInfra {
+public class RoleInfraImpl implements RoleInfra {
 
     @Autowired
     private RoleDao roleDao;
-  
+
     @Override
     public List<Role> findAll() {
         return roleDao.findAll();
@@ -39,7 +36,6 @@ public class RoleInfraImpl  implements RoleInfra {
         return roleDao.deleteByAuthority(authority);
     }
 
-   
 
     @Override
     public Role findById(Long id) {
@@ -53,12 +49,11 @@ public class RoleInfraImpl  implements RoleInfra {
         roleDao.deleteById(id);
     }
 
-   
 
     @Override
     public List<Role> create(List<Role> roles) {
-        List<Role>  resultat = new ArrayList<>();
-        roles.forEach(r->resultat.add(save(r)));
+        List<Role> resultat = new ArrayList<>();
+        roles.forEach(r -> resultat.add(save(r)));
         return resultat;
     }
 
@@ -85,19 +80,18 @@ public class RoleInfraImpl  implements RoleInfra {
         return 1;
     }
 
-	@Override
-	public Role save(Role role) {
-		Role r =  findByAuthority(role.getAuthority());
-		if(r != null) return r;
-		return roleDao.save(role);
-	}
+    @Override
+    public Role save(Role role) {
+        Role r = findByAuthority(role.getAuthority());
+        if (r != null) return r;
+        return roleDao.save(role);
+    }
 
-	@Override
-	public List<Role> findByUserName(String username) {
-		
-		return null;
-	}
+    @Override
+    public List<Role> findByUserName(String username) {
 
+        return null;
+    }
 
 
 }
