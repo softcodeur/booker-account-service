@@ -50,7 +50,9 @@ public class UserRest {
 
     @GetMapping("/ref/{ref}")
     public boolean existsByRef(@PathVariable String ref) {
-        return userService.existByRef(ref);
+          System.out.println("****************************: "+ref);
+    	return userService.existByRef(ref);
+   
     }
 
     @DeleteMapping("/")
