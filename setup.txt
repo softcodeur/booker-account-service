@@ -1,0 +1,29 @@
+//////////////////////////////
+// SELLER
+{
+  "email": "yassir.acaf@gmail.com",
+  "firstName": "yassir",
+  "lastName": "acaf",
+  "password": "12345",
+  "ref": "yassir1234",
+  "roles": [
+    {
+      "authority": "ROLE_SELLER"
+    }
+  ],
+  "username": "yassir1234"
+}
+// BUYER
+{
+  "email": "belkoweb1718@gmail.com",
+  "firstName": "amadou",
+  "lastName": "soumana",
+  "password": "12345",
+  "ref": "amadou1234",
+  "roles": [
+    {
+      "authority": "ROLE_BUYER"
+    }
+  ],
+  "username": "amadou1234"
+}
